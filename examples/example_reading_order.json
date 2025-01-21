@@ -1,0 +1,84 @@
+{
+  "reading_order": [
+    {
+      "document": "Project Summary.md",
+      "description": "Start here for a concise overview of the project's vision, goals, and core functionality. This document provides the essential context needed to understand the more detailed documents that follow.",
+      "key_concepts": [
+        "Vision and goals",
+        "Core functionality overview",
+        "Industry scope and impact"
+      ]
+    },
+    {
+      "document": "whitepaper/3rd Draft.md",
+      "description": "Read this next for a comprehensive technical understanding of the system's architecture, components, and theoretical foundations. The whitepaper provides the detailed background needed to understand implementation decisions.",
+      "key_concepts": [
+        "Technical architecture",
+        "Compliance framework",
+        "Monetization strategy",
+        "Governance model"
+      ]
+    },
+    {
+      "document": "MVP_Implementation_Plan.md",
+      "description": "After understanding the theory and architecture, this document details the practical implementation steps and technical specifications for building the MVP.",
+      "key_concepts": [
+        "Technical stack details",
+        "Implementation phases",
+        "Testing strategy",
+        "Deployment checklist"
+      ]
+    },
+    {
+      "document": "Competition Comparison.md",
+      "description": "Review this to understand how the solution differentiates itself from existing alternatives in the market.",
+      "key_concepts": [
+        "Market positioning",
+        "Competitive advantages",
+        "Feature comparisons"
+      ]
+    },
+    {
+      "document": "Roadmap.md",
+      "description": "Examine the project's development timeline and milestone planning.",
+      "key_concepts": [
+        "Development phases",
+        "Feature rollout schedule",
+        "Long-term objectives"
+      ]
+    },
+    {
+      "document": "Funding Phases.md",
+      "description": "Understand the project's financial planning and resource allocation strategy.",
+      "key_concepts": [
+        "Funding requirements",
+        "Resource allocation",
+        "Financial milestones"
+      ]
+    },
+    {
+      "document": "Initial Fund Allocation Example.md",
+      "description": "Review practical examples of how project funds will be utilized.",
+      "key_concepts": [
+        "Budget breakdown",
+        "Resource distribution",
+        "Cost estimates"
+      ]
+    },
+    {
+      "document": "Questions.md",
+      "description": "Reference this document for answers to common questions and clarifications about various aspects of the project.",
+      "key_concepts": [
+        "FAQ",
+        "Technical clarifications",
+        "Implementation details"
+      ]
+    }
+  ],
+  "metadata": {
+    "last_updated": "2025-01-20",
+    "version": "1.0",
+    "project_name": "Trustless Data Ledger and Market Framework",
+    "repository_root": "/Users/sethbangert/Code/cloud/aegis"
+  }
+}
