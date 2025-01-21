@@ -69,7 +69,7 @@ class TestFileRename(unittest.TestCase):
         finally:
             shutil.rmtree(empty_dir)
 
-    @patch('file_rename.filedialog')
+    @patch('src.file_rename.filedialog')
     def test_main_function(self, mock_filedialog):
         from src.file_rename import main
         
@@ -84,7 +84,7 @@ class TestFileRename(unittest.TestCase):
             mock_filedialog.askdirectory.return_value = test_dir
             
             # Mock Tk to prevent GUI creation
-            with patch('file_rename.tk.Tk'):
+            with patch('src.file_rename.tk.Tk'):
                 main()
                 mock_filedialog.askdirectory.assert_called_once()
                 

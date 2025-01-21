@@ -55,7 +55,7 @@ class TestFileUtilities(unittest.TestCase):
             # Clean up
             shutil.rmtree(empty_dir)
 
-    @patch('file_utilities.filedialog')
+    @patch('src.file_utilities.filedialog')
     def test_get_root_dir(self, mock_filedialog):
         from src.file_utilities import get_root_dir
         expected_path = '/test/path'
@@ -65,7 +65,7 @@ class TestFileUtilities(unittest.TestCase):
         self.assertEqual(result, expected_path)
         mock_filedialog.askdirectory.assert_called_once()
 
-    @patch('file_utilities.filedialog')
+    @patch('src.file_utilities.filedialog')
     def test_get_file_path(self, mock_filedialog):
         from src.file_utilities import get_file_path
         expected_path = '/test/file.txt'
@@ -75,7 +75,7 @@ class TestFileUtilities(unittest.TestCase):
         self.assertEqual(result, expected_path)
         mock_filedialog.askopenfilename.assert_called_once()
 
-    @patch('file_utilities.filedialog')
+    @patch('src.file_utilities.filedialog')
     def test_get_file_paths(self, mock_filedialog):
         from src.file_utilities import get_file_paths
         expected_paths = ('/test/file1.txt', '/test/file2.txt')
