@@ -1,138 +1,171 @@
-# Python Scripts Collection
+# Python Scripts Collection 🐍
 
-A collection of utility scripts for file operations, directory management, and format conversions.
+[![Python 3.6+](https://img.shields.io/badge/python-3.6+-blue.svg)](https://www.python.org/downloads/)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+[![Tests](https://img.shields.io/badge/tests-passing-brightgreen.svg)](tests/)
 
-## Scripts Overview
+A powerful collection of Python utility scripts for file operations, directory management, and format conversions. Streamline your workflow with easy-to-use tools for common development tasks.
 
-### combine_markdown.py
-Combines multiple markdown files into a single master file. Each file's content is separated with clear markers indicating the start and end of each source file.
-- Usage: Run the script and provide the repository path and output filename when prompted.
+## 📑 Table of Contents
+- [Quick Start](#-quick-start)
+- [Features](#-features)
+- [Installation](#-installation)
+- [Usage](#-usage)
+- [Testing](#-testing)
+- [Contributing](#-contributing)
+- [Future Development](#-future-development)
+- [Troubleshooting](#-troubleshooting)
+- [License](#-license)
 
-### combine-text.py
-Combines multiple text files from a selected directory into a single text file, with clear separation between contents.
-- Usage: Run the script and select the directory containing the text files through the GUI dialog.
+## 🚀 Quick Start
 
-### delete_files_in_subdirs.py
-Deletes all files within a selected directory and its subdirectories. Includes a confirmation dialog for safety.
-- Usage: Run the script and select the target directory through the GUI dialog.
-
-### demos.py
-A GUI application that provides easy access to various file operations:
-- Delete files in subdirectories
-- Add prefix to all files in a directory
-- Features a clean interface with clear buttons for each operation
-
-### file_rename.py
-Finds the largest file in a directory and renames it to match the directory name while preserving the file extension.
-- Usage: Run the script and select the target directory through the GUI dialog.
-
-### file_utilities.py
-A collection of utility functions for file operations:
-- `get_file_list`: Lists files in a directory with count
-- `get_root_dir`: Opens directory selection dialog
-- `get_file_path`: Opens single file selection dialog
-- `get_file_paths`: Opens multiple file selection dialog
-
-### image-search.py
-Performs Google image searches and downloads results to a specified directory. Creates a results.txt file with detailed image information.
-- Requires: SerpAPI key
-- Usage: Run the script and select the save directory through the GUI dialog.
-
-### merge_md.py
-Merges multiple markdown files from a directory into a single file, adding separators and headers for clarity.
-- Default input directory: './endpoints'
-- Default output: './nba_live_endpoints.md'
-
-### prefix_rename.py
-Adds a specified prefix to all files within a selected directory.
-- Features a GUI interface for prefix input
-- Includes confirmation dialog before renaming
-
-### process_subdirs.py
-Processes subdirectories with a specified function (default: rename largest file).
-- Usage: Run the script and select the root directory through the GUI dialog.
-
-### tree_writer.py
-Generates directory structure documentation in multiple formats:
-- Supported formats: txt, html, pdf, json, yaml, natural language
-- Features:
-  - Customizable depth
-  - Hidden file/directory filtering
-  - Multiple output formats
-- Usage: `python tree_writer.py [-p PATH] [-o OUTPUT] [-f FORMAT] [-d DEPTH]`
-
-### txt-to-pdf.py
-Converts text files to PDF format.
-- Features:
-  - Custom input/output path selection
-  - Uses Arial font, size 12
-  - Left-aligned text formatting
-
-## Dependencies
-- tkinter (GUI components)
-- fpdf (PDF generation)
-- reportlab (PDF generation)
-- jinja2 (HTML template rendering)
-- yaml (YAML file handling)
-- serpapi (Google image search API)
-
-## Installation
-1. Clone the repository
-2. Install required dependencies:
 ```bash
-pip install fpdf reportlab jinja2 pyyaml google-search-results
+# Clone the repository
+git clone https://github.com/yourusername/python-scripts.git
+
+# Create and activate virtual environment
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Run a script (example: tree_writer)
+python src/tree_writer.py -p /path/to/directory -o output.txt -f txt
 ```
 
-## Testing
-The repository includes a comprehensive test suite for the Python scripts. Tests are located in the `tests` directory.
+## ✨ Features
 
-### Dependencies for Testing
-Before running tests, ensure you have all required dependencies installed:
-```bash
-pip install reportlab pyyaml
-brew install tcl-tk  # For macOS users
+### File Operations
+- **combine_markdown.py**: Merge multiple markdown files into a single document
+- **combine-text.py**: Concatenate text files with clear separators
+- **delete_files_in_subdirs.py**: Safely remove files in directories
+- **file_rename.py**: Smart file renaming based on directory names
+
+### Directory Management
+- **tree_writer.py**: Generate directory structure documentation
+  ```bash
+  python tree_writer.py -p ./my_project -o structure.txt -f txt -d 3
+  ```
+- **process_subdirs.py**: Batch process subdirectories
+- **prefix_rename.py**: Add prefixes to files in bulk
+
+### Format Conversions
+- **txt-to-pdf.py**: Convert text files to professional PDFs
+- **merge_md.py**: Combine and format markdown documentation
+
+### Utility Tools
+- **demos.py**: GUI interface for common operations
+- **file_utilities.py**: Core utility functions
+- **image-search.py**: Automated image search and download
+
+## 🔧 Installation
+
+1. Ensure Python 3.6+ is installed
+2. Set up a virtual environment:
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # On Windows: venv\Scripts\activate
+   ```
+
+3. Install dependencies:
+   ```bash
+   pip install fpdf reportlab jinja2 pyyaml google-search-results
+   ```
+
+4. Additional system requirements:
+   - macOS: `brew install tcl-tk`
+   - Linux: `sudo apt-get install python3-tk`
+   - Windows: Tkinter included with Python
+
+## 🎯 Usage
+
+### Tree Writer Example
+```python
+from src.tree_writer import generate_tree
+
+# Generate directory structure in JSON format
+generate_tree(
+    path="./my_project",
+    output="structure.json",
+    format="json",
+    depth=3
+)
 ```
 
-### Running Tests
-To run all tests:
+### Markdown Combiner Example
+```python
+from src.combine_markdown import combine_files
+
+# Merge markdown files
+combine_files(
+    input_dir="./docs",
+    output_file="combined.md"
+)
+```
+
+## 🧪 Testing
+
+Run the comprehensive test suite:
+
 ```bash
 python tests/run_tests.py
 ```
 
-This will execute all test cases and provide a summary of:
-- Total tests run
-- Number of failures
-- Number of errors
-- Number of skipped tests
+### Test Coverage
+- ✅ File operations
+- ✅ Directory management
+- ✅ Format conversions
+- ✅ Utility functions
 
-The test suite uses Python's unittest framework and includes mocking for GUI components to enable headless testing.
+### Writing Tests
+1. Create test files in `tests/` directory
+2. Follow naming convention: `test_*.py`
+3. Use unittest framework
+4. Include positive and negative cases
+5. Clean up test artifacts
 
-### Available Test Suites
-- `test_file_utilities.py`: Tests for basic file operation utilities
-- `test_file_rename.py`: Tests for file renaming functionality
-- `test_combine_markdown.py`: Tests for markdown file combination
-- `test_tree_writer.py`: Tests for directory structure generation and output formats
+## 👥 Contributing
 
-### Writing New Tests
-When adding new scripts or modifying existing ones, please ensure to:
-1. Create corresponding test files in the `tests` directory
-2. Follow the naming convention `test_*.py`
-3. Use Python's unittest framework
-4. Include both positive and negative test cases
-5. Clean up any temporary files/directories created during tests
+1. Fork the repository
+2. Create a feature branch
+3. Write clean, documented code
+4. Add tests for new functionality
+5. Submit a pull request
 
-## Future Development
-See [ROADMAP.md](ROADMAP.md) for a detailed list of recommended scripts and tools we plan to build. This includes:
-- Code generation and templating tools
-- Development workflow automation
-- Testing and quality assurance utilities
+### Code Style
+- Follow PEP 8 guidelines
+- Add docstrings to functions
+- Keep functions focused and modular
+- Include type hints
+
+## 🔮 Future Development
+
+See [ROADMAP.md](docs/ROADMAP.md) for detailed plans including:
+- Code generation tools
+- Workflow automation
+- Testing utilities
 - Documentation generators
-- Deployment and DevOps tools
-- Data processing utilities
-- Security tools
-- Monitoring and maintenance systems
+- DevOps tools
+- Data processing
+- Security features
+- Monitoring systems
 
-Each proposed tool includes detailed features, implementation guidelines, and integration priorities.
+## 🔍 Troubleshooting
 
-## License
-See LICENSE file for details.
+### Common Issues
+1. **GUI Not Working**
+   - Ensure Tkinter is installed
+   - Check Python version compatibility
+
+2. **PDF Generation Fails**
+   - Verify fpdf/reportlab installation
+   - Check write permissions
+
+3. **Image Search Issues**
+   - Verify SerpAPI key configuration
+   - Check network connectivity
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](docs/LICENSE) file for details.
