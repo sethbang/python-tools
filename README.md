@@ -54,6 +54,25 @@ python src/tree_writer.py -p /path/to/directory -o output.txt -f txt
 - **txt-to-pdf.py**: Convert text files to professional PDFs
 - **merge_md.py**: Combine and format markdown documentation
 
+### Data Generation and Processing
+- **test_data_generator.py**: Generate sample CSV data with configurable patterns
+  ```python
+  from src.test_data_generator import TestDataGenerator, ColumnConfig
+
+  # Configure columns for test data
+  columns = [
+      ColumnConfig(name="id", data_type="integer", min_value=1, max_value=1000),
+      ColumnConfig(name="name", data_type="string"),
+      ColumnConfig(name="email", data_type="email"),
+      ColumnConfig(name="score", data_type="float", min_value=0.0, max_value=100.0)
+  ]
+
+  # Generate and save test data
+  generator = TestDataGenerator(columns)
+  generator.generate_data(num_rows=100)
+  generator.save_to_csv("sample_data.csv")
+  ```
+
 ### Utility Tools
 - **demos.py**: GUI interface for common operations
 - **file_utilities.py**: Core utility functions
@@ -104,6 +123,23 @@ combine_files(
 )
 ```
 
+### Test Data Generator Example
+```python
+from src.test_data_generator import TestDataGenerator, ColumnConfig
+
+# Generate test data with various data types
+columns = [
+    ColumnConfig(name="id", data_type="integer", min_value=1, max_value=1000),
+    ColumnConfig(name="name", data_type="string"),
+    ColumnConfig(name="email", data_type="email", null_probability=0.1),
+    ColumnConfig(name="registration_date", data_type="date")
+]
+
+generator = TestDataGenerator(columns)
+generator.generate_data(num_rows=1000)
+generator.save_to_csv("test_users.csv")
+```
+
 ## 🧪 Testing
 
 Run the comprehensive test suite:
@@ -117,6 +153,7 @@ python tests/run_tests.py
 - ✅ Directory management
 - ✅ Format conversions
 - ✅ Utility functions
+- ✅ Data generation
 
 ### Writing Tests
 1. Create test files in `tests/` directory
